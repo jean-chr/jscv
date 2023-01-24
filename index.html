@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV ATIKPELI</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body class="content-templates border-dark border-start">
+    <div class="print-area">
+        <div class="h4 pb-2 mb-4  text-center text-white border-bottom border-danger bg-primary"> cv en javascript</div>
+        <div class="row">
+            <!-- input du cv-->
+            <div class="col-md-4 bg-white overflow-auto">
+                <input class="form-control form-control-sm" id="nom" value="XXXXXX" name="nom" type="text" placeholder="Nom">
+                <input class="form-control form-control-sm" id="prenom"  value="Epi" name="prenom" type="text" placeholder="Prenom">
+                <input class="form-control form-control-sm" id="age" name="age" type="text" placeholder=" votre age">
+                <input class="form-control form-control-sm" id="numero" name="numero" type="tel"
+                    placeholder="Votre Numero">
+                <input class="form-control form-control-sm" id="pays" name="pays" type="tel" placeholder="Votre pays">
+                <input class="form-control form-control-sm" id="email" name="email" type="text"
+                    placeholder=" votre adresse email">
+                <select class="form-select form-select-sm" name="sexe" id="sexe">
+                    <option value="Homme" selected>Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+
+                <div class="mb-3">
+                    <label for="file" class="form-label">photo</label>
+                    <input class="form-control form-control-sm" onchange="image(this)" type="file">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">votre description</label>
+                    <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                </div>
+
+
+                <!-- section parcours-->
+
+                <div class="parcours">
+                    <h2 class="">parcours ou Formation</h2>
+                    <button onclick="addparcours()">ajouter un ligne </button>
+                    <p id="pc">
+                    <div class="parcours" id="parcours">
+                        <input autocomplete="off" type="text" class=" form-control form-control-sm libelle0"
+                            id="formation" placeholder=" nom de la formation">
+                        <input autocomplete="off" type="date" class="ddate0 form-control form-control-sm " 
+                        id="debut">
+                        <input autocomplete="off" type="date" class="fdate0 form-control form-control-sm " 
+                        id="fin">
+                    </div>
+                    </p>
+                </div>
+
+
+                <!-- section competances-->
+                <div class="competances">
+                    <h3>Details sur vous competances</h3>
+                    <textarea name="competances" id="competances" cols="30" rows="5"></textarea>
+                </div>
+
+            </div>
+
+            <!--views info-->
+            <div class="col-md-8 rounded-4 border border-success ">
+                <div class="row col-12 justify-content-start">
+                    <div class="col-4 ">
+                        <img class="img-fluid img-profile rounded-circle  mx-auto " class="preview" id="preview" />
+                    </div>
+                    <div class="col-6 pe-5" >
+                        <h1 class="mb-0" id="vfullname"> Nom & prenom</h1>
+                        <section>
+                            <div class=" liste">
+                                <p id="vtel" class="align-self-end"> numero</p>
+                                <p id="vpays" class="align-self-end">pays</p>
+                                <p id="vsexe" class="align-self-end">Sexe</p>
+                                <p id="vage" class="align-self-end">date de naissace</p>
+                                <div class="subheading mb-5 blod">
+                                    <a href="mailto:" class="vemail text-dark text-" id="vemail">example@email.com</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-6">
+                        <span class="d-none d-lg-block">
+                            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" class="preview"
+                                id="preview" />
+                        </span>
+                    </div>
+                </div>
+                <p class="lead mb-5 text-center">Description</p>
+                <p class="lead mb-5" id="vdescription"> descrivez-vous</p>
+                <hr>
+                <div class=" col-12 text-center">
+                    <h3>Mes Parcours</h3>
+                    <div class="col-12">
+                        <section class="">
+                            <div class="vparcours" id="vparcours">
+                            </div>
+                        </section>
+                        <hr>
+                        <section>
+                            <p class="h3">Details sur mes competances</p>
+                            <div id="vcompetances"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
