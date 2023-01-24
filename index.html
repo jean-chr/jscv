@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Builder avec js</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body class="content-templates border-dark border-start">
+    
+    <div class="contenair col row col-12">
+        <div class="col-4 row ignore">
+        
+            <!-- section informations-->
+            <div class="informations border ">
+                <h1>vos informations </h1>
+                <div class="relative mb-2">
+                    <label for="nom" class="nom leading-7 text-sm text-gray-600">Nom
+                    </label>
+                    <input autocomplete="off" type="text" id="nom" name="nom" value="BODJONA"
+                        class="form-control form-control-sm ease-in-out" />
+                </div>
+
+                <div class="relative mb-2">
+                    <label for="prenom" class="leading-7 text-sm text-gray-600">Prenom</label>
+                    <input autocomplete="off" type="text" id="prenom" name="prenom" value="jean"
+                        class="form-control form-control-sm ease-in-out" />
+                </div>
+
+                <div class="relative mb-2">
+                    <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                    <input autocomplete="off" type="email" id="email" name="email"
+                        class="form-control form-control-sm" />
+                </div>
+
+                <div class="relative mb-2">
+                    <label for="age" class="leading-7 text-sm text-gray-600">Age</label>
+                    <input autocomplete="off" type="number" id="age" name="age"
+                        class="form-control form-control-sm ease-in-out" />
+                </div>
+
+                <div class="relative mb-2">
+                    <label for="pays" class="leading-7 text-sm text-gray-600">pays</label>
+                    <input autocomplete="off" type="text" id="pays" name="pays"
+                        class="form-control form-control-sm ease-in-out" />
+                </div>
+
+                <input autocomplete="off"  class="form-control form-control-sm" type="tel" name="" id="tel" placeholder=" telephone">
+
+                <div class="relative mb-2">
+                    <label for="photo" class="leading-7 text-sm text-gray-600">photo</label>
+                    <input autocomplete="on" type="file" class="form-control form-control-sm" id="photo" name="photo" onchange="perviewi(this)"  height="10px" />
+                </div>
+                <label for="photo" class="leading-7 text-sm text-gray-600">description</label>
+                <input autocomplete="on" name="textarea1" id="textarea1" class="form-control form-control-lg" value="je suis etudiant SUPINFO">
+            </div>
+            
+            <hr class="pt-3 bg-danger">
+
+            <!-- section parcours-->
+
+            <div class="parcours">
+                <h2 class="">parcours ou Cursus</h2>
+                <marquee behavior="" direction="">Ajouter les ligne avant d'entree les donnee </marquee><br>
+                <marquee class="text-danger"> la derniere ligne vous validez tout </marquee>
+                <button id="nombre" >ajouter un ligne </button> 
+                <p id="pc" class="">
+                    <div class="parcours col-12 row" id="parcours"> 
+                        <input autocomplete="off" type="text" class="libelle0 col-auto" id="libelle0" placeholder=" nom de la formation">
+                        <input autocomplete="off" type="date" class="ddate0 col-auto" id="ddate0">
+                        <input autocomplete="off"  type="date" class="fdate0 col-auto" id="fdate0">
+                    </div>
+                </p>
+            </div>
+
+            <hr class="pt-3 bg-danger">
+               <!-- section competances-->
+            <div class="competances form-floating">
+                <textarea name="competances" class="form-control" id="competances" cols="30" rows="5"></textarea>
+                <label for="floatingTextarea2Disabled">competance</label>
+            </div>
+
+
+        </div>
+
+        <div class="col-8 row-col-2 cv  shadow-lg  bg-body-tertiary rounded" id="cv">
+            <h1 class="text-center bg-dark text-white">Mon cv</h1>
+            <hr>
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <div class="col-12 row">
+                        <div class="col-8 pt-5" >
+                            <h1 class="mb-0" id="vfullname">Votre Nom</h1>
+                            <section>
+                                <div class=" liste">
+                                    <p id="vtel" class="align-self-end"> numero</p>
+                                    <p id="vpays"  class="align-self-end">pays</p>
+                                    <p id="vage" class="align-self-end">date de naissace</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-4">
+                            <span class="d-none d-lg-block">
+                            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" class="preview" id="preview" />
+                        </span>
+                        </div> 
+                    </div>
+
+                    <div class="subheading mb-5 blod">
+                        <a href="mailto:" class="vemail text-dark text-" id="vemail">example@email.com</a>
+                    </div>
+                    <p class="lead mb-5" id="vdescription"> descrivez-vous</p>
+
+                </div>
+            </section>                   
+            
+            <hr>
+            <section class="bg">
+                <h1 class="">Mes parcours</h1>
+        
+                <div class="vparcours" id="vparcours"></p>
+                    <div class="d-flex justify-content-between liste">
+                        <p id="vlibelle0" class="align-self-end"> parcours</p>
+                        <p  id="vddate0"  class="align-self-end">Date debut</p>
+                        <p id="vfdate0" class="align-self-end">Date fin</p>
+                        
+                    </div>
+                    </div>
+            </section>
+            <hr>
+            <section>
+                <h1>competances et experience</h1>
+                <div id="vcompetances"></div>
+            </section>
+        </div>
+        <div class="pt-5"></div>
+    </div>
+
+</body>
+<script src="scrpts.js"></script>
+</html>
